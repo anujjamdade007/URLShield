@@ -13,7 +13,8 @@ from model_pipeline import URLFeatureExtractor, ModelSelector, UnifiedPhishingPi
 def prepare_sample_data(sample_size=50000):
     """Load and prepare sample data for model selection"""
     print("📊 Loading dataset for model selection...")
-    df = pd.read_csv('URLShield/data/url_dataset.csv')
+    df = pd.read_csv('URLShield/data/url_dataset.csv') # For csv file
+    # df = pd.read_parquet('URLShield/data/url_dataset.parquet') # For Parquet file
     df['url'] = df['url'].astype(str).str.strip()
     df['type'] = df['type'].astype(str).str.strip().str.lower()
     
